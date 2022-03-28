@@ -44,4 +44,6 @@ configurations {
         extendsFrom annotationProcessor
     }
 }
-
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
