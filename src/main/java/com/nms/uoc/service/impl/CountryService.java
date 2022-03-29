@@ -62,7 +62,7 @@ public class CountryService implements ICountryService {
     @Override
     @SneakyThrows
     public boolean delete(long id) {
-        if (repository.findById(id).isEmpty()) {
+        if (!repository.findById(id).isPresent()) {
             throw new AppException(ErrorResponseBase.NOT_EXISTED);
         }
         try {
@@ -76,7 +76,7 @@ public class CountryService implements ICountryService {
     @Override
     @SneakyThrows
     public Country update(Country country) {
-        if (repository.findById(country.getId()).isEmpty()) {
+        if (!repository.findById(country.getId()).isPresent()) {
             throw new AppException(ErrorResponseBase.NOT_EXISTED);
         }
         try {
