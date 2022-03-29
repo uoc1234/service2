@@ -34,7 +34,7 @@ public class ClubController {
     @GetMapping("/test")
     public ResponseEntity test() {
         Map<String, String> map = new HashMap<String, String>();
-        map.put("ok","ok2");
+        map.put("ok","ok3");
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(map);
