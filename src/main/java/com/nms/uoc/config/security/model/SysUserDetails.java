@@ -1,14 +1,17 @@
 package com.nms.uoc.config.security.model;
 
 import com.nms.uoc.model.entity.UserEntity;
-import lombok.Data;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.util.Collection;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class SysUserDetails extends UserEntity implements UserDetails, Serializable {
     private static final long serialVersionUID = 1L;
     private Collection<GrantedAuthority> authorities;
